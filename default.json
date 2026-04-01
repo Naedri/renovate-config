@@ -1,0 +1,37 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "configMigration": true,
+  "dependencyDashboard": true,
+  "dependencyDashboardApproval": true,
+  "extends": ["group:recommended", "replacements:all", "workarounds:all"],
+  "ignoreDeps": [],
+  "ignorePaths": ["**/node_modules/**"],
+  "labels": ["type: dependencies"],
+  "minimumReleaseAge": "7 days",
+  "packageRules": [
+    {
+      "automerge": true,
+      "matchUpdateTypes": ["digest", "minor", "patch", "pin"]
+    },
+    {
+      "extends": [":semanticCommitScope(ci)"],
+      "groupName": "GitHub Actions",
+      "matchManagers": ["github-actions"]
+    },
+    {
+      "extends": ["group:allNonMajor"],
+      "matchManagers": ["npm"]
+    },
+    {
+      "groupName": "Docker",
+      "matchManagers": ["docker"]
+    }
+  ],
+  "prConcurrentLimit": 1,
+  "prHourlyLimit": 1,
+  "rangeStrategy": "auto",
+  "rebaseWhen": "conflicted",
+  "schedule": ["after 6pm on Wednesday"],
+  "separateMultipleMajor": true,
+  "timezone": "Europe/Paris"
+}
