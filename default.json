@@ -1,5 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "commitMessageExtra": "",
   "configMigration": true,
   "dependencyDashboard": true,
   "dependencyDashboardApproval": true,
@@ -32,6 +33,8 @@
   "rangeStrategy": "auto",
   "rebaseWhen": "conflicted",
   "schedule": ["after 6pm on Wednesday"],
+  "semanticCommits": "enabled",
+  "semanticCommitType": "build",
   "separateMultipleMajor": true,
   "timezone": "Europe/Paris"
 }
